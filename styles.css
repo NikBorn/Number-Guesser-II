@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html {
+  margin: 0px;
+}
+
+body {
+  text-align: center;
+}
+
+header {
+  background-color: #404041;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+h1,
+.display-guess {
+  color: #ED458B;
+}
+
+h1{
+  font-size: 35px;
+  margin: 0px;
+}
+
+input {
+  width: 280px;
+}
+
+
+
+.guesser {
+  font-weight: 300;
+  color:#FFFFFF;
+}
