@@ -10,20 +10,20 @@ html {
 }
 
 body {
-  text-align: center;
   margin: 0px;
+  text-align: center;
 }
 
 header {
   background-color: #404041;
-  padding: 10px;
   margin-bottom: 30px;
+  padding: 10px;
 }
 
 p {
   font-size: 30px;
-  margin: 0px;
   font-weight: 300;
+  margin: 0px;
 }
 
 h1,
@@ -36,59 +36,48 @@ h1{
   margin: 0px;
 }
 
-/*.display-guess {
-  font-size: 100px;
-}*/
-
 h2 {
   font-size: 70px;
-  margin: 0px auto;
   font-weight: 300;
+  margin: 0px auto;
   width: 400px;
 }
 
 h3 {
   display: inline-block;
-  margin: 0px;
   font-weight: 300;
+  margin: 0px;
 }
 
 .board {
-  width: 180px;
-  height: 27px;
   display: inline-block;
+  height: 27px;
   margin-bottom: 30px;
+  width: 180px;
 }
-
-.player-1,
-.player-2 {
-  margin-right: 5px;
-}
-
 
 input {
-  width: 370px;
-  margin-bottom: 40px;
-  height: 30px;
   font-size: 20px;
+  height: 30px;
+  margin-bottom: 40px;
   text-align: center;
-  -webkit-writing-mode: none;
+  width: 370px;
 }
 
 .btns {
   background-color: #D0D2D3;
   border: none;
   border-radius: 50px;
-  width: 180px;
-  height: 30px;
-  font-size: 18px;
   color: #FFFFFF;
+  font-size: 18px;
+  height: 30px;
   padding-bottom: 10px;
+  width: 180px;
 }
 
 .guesser {
-  font-weight: 300;
   color:#FFFFFF;
+  font-weight: 300;
 }
 
 .guess-btn {
@@ -96,8 +85,8 @@ input {
 }
 
 .reset-btn {
-  width: 380px;
   margin-bottom: 40px;
+  width: 380px;
 }
 
 .btns:hover {
@@ -114,8 +103,8 @@ input {
 
 .topbox,
 .bottombox {
-  min-height: 60px;
   align-content: center;
+  min-height: 60px;
   padding-top: 10px;
 }
 
@@ -132,11 +121,6 @@ input {
 }
 
 .minmax {
-  width: 70px;
   margin-bottom: 0px;
-}
-
-.active {
-  background-color: #ED458B;
-  color: #FFFFFF;
+  width: 70px;
 }
