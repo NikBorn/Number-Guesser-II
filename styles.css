@@ -11,12 +11,19 @@ html {
 
 body {
   text-align: center;
+  margin: 0px;
 }
 
 header {
   background-color: #404041;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 30px;
+  margin: 0px;
+  font-weight: 300;
 }
 
 h1,
@@ -25,17 +32,111 @@ h1,
 }
 
 h1{
-  font-size: 35px;
+  font-size: 45px;
   margin: 0px;
 }
 
-input {
-  width: 280px;
+/*.display-guess {
+  font-size: 100px;
+}*/
+
+h2 {
+  font-size: 70px;
+  margin: 0px auto;
+  font-weight: 300;
+  width: 400px;
+}
+
+h3 {
+  display: inline-block;
+  margin: 0px;
+  font-weight: 300;
+}
+
+.board {
+  width: 180px;
+  height: 27px;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.player-1,
+.player-2 {
+  margin-right: 5px;
 }
 
 
+input {
+  width: 370px;
+  margin-bottom: 40px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+  -webkit-writing-mode: none;
+}
+
+.btns {
+  background-color: #D0D2D3;
+  border: none;
+  border-radius: 50px;
+  width: 180px;
+  height: 30px;
+  font-size: 18px;
+  color: #FFFFFF;
+  padding-bottom: 10px;
+}
 
 .guesser {
   font-weight: 300;
   color:#FFFFFF;
+}
+
+.guess-btn {
+  margin-right: 10px;
+}
+
+.reset-btn {
+  width: 380px;
+  margin-bottom: 40px;
+}
+
+.btns:hover {
+  background-color: #404041;
+  color:  #ED458B;
+  font-weight: 700;
+}
+
+.btns:disabled {
+  color: #404041;
+  background-color: #999999;
+  font-weight: 300;
+}
+
+.topbox,
+.bottombox {
+  min-height: 60px;
+  align-content: center;
+  padding-top: 10px;
+}
+
+.topbox {
+  margin-top: 40px;
+}
+
+.bottombox {
+  margin-bottom: 40px;
+}
+
+.displaybox {
+  min-height: 100px;
+}
+
+.minmax {
+  width: 70px;
+  margin-bottom: 0px;
+}
+
+.active {
+  background-color: #ED458B;
+  color: #FFFFFF;
 }

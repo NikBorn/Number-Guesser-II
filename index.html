@@ -11,19 +11,37 @@
     <header>
       <h1>Number <span class="guesser">Guesser</span></h1>
     </header>
-    <input class="user-guess" type="number">
+    <section class="scoreboard">
+      <article class="board board-1 active">
+        <h3 class="player-1">Player 1:</h3>
+        <h3 class="score-1">0</h3>
+      </article>
+      <article class="board board-2 active">
+        <h3 class="player-2">Player 2:</h3>
+        <h3 class="score-2">0</h3>
+      </article>
+    </section>
+    <input class="user-guess" type="number" placeholder="Enter Your Guess">
     <article>
       <button class="guess-btn btns">Guess</button>
       <button class="clear-btn btns" disabled>Clear</button>
     </article>
-    <article>
+    <article class="topbox clearfix">
       <p id="top-text"></p>
     </article>
-    <article class="display-guess"></article>
-    <article>
+    <article class="displaybox">
+      <h2 class="display-guess">
+    </article>
+    <article class="bottombox clearfix">
     <p id="bottom-text"></p>
     </article>
     <button class="reset-btn btns" disabled>Reset</button>
+    <article class="minmax-container">
+      <h3 class="minmax-label">Guess Min:</h3>
+      <input type="number" class="min-value minmax" value="0">
+      <h3 class="minmax-label">Guess Max:</h3>
+      <input type="number" class="max-value minmax" value="100">
+    <article>
     <script type="text/javascript" src="scripts.js"></script>
   </body>
 </html>
