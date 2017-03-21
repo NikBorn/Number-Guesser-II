@@ -25,6 +25,9 @@ function compareNumbers() {
   if (guessedNumber < rightNumber) {
     document.querySelector("#bottom-text").innerText = "That was Too Low.";
   } else if (guessedNumber == rightNumber) {
+    correctNumber();
+    rightNumber = correctNumber();
+    console.log(rightNumber);
     document.querySelector("#bottom-text").innerText = "Boom! Correct Guess!!";
   }
 };
@@ -52,7 +55,6 @@ resetButton.addEventListener("click", function (){
 
 window.addEventListener("keyup", function(){
   var guessedNumber = document.querySelector(".user-guess").value;
-  console.log(guessedNumber)
   if (guessedNumber != "") {
   clearButton.disabled=false;
   resetButton.disabled=false;
