@@ -1,21 +1,23 @@
 
-var rightNumber;
-var guessedNumber;
-var min = 0;
-var max = 100;
-var guessButton = document.querySelector(".guess-btn");
 var clearButton = document.querySelector(".clear-btn");
+var guessButton = document.querySelector(".guess-btn");
+var guessedNumber;
+var max = 100;
+var min = 0;
+var maxVal = document.querySelector(".max-value");
+var minVal = document.querySelector(".min-value");
 var resetButton = document.querySelector(".reset-btn");
+var rightNumber;
+
+
+correctNumber();
+console.log("min", min, "max", max, "rightNumber", rightNumber);
 
 function correctNumber() {
   var randomNum = Math.floor(Math.random() * (max - min)) + min;
   rightNumber = newNumber=parseInt(randomNum);
   return rightNumber;
 }
-
-correctNumber();
-console.log('rightNumber', rightNumber);
-
 function compareNumbers() {
   document.querySelector(".display-guess").innerText = guessedNumber;
   var topText = document.querySelector("#top-text");
@@ -32,47 +34,46 @@ function compareNumbers() {
     increaseRange();
     correctNumber();
     rightNumber = correctNumber();
-    console.log(rightNumber, "right number");
-    document.querySelector("#bottom-text").innerText = "Boom! Bitches!!";
-
-    document.querySelector(".min-value").value = min;
-    document.querySelector(".max-value").value = max;
+    console.log("right number", rightNumber);
+    document.querySelector("#bottom-text").innerText = "Boom-Shocka-Locka!";
+    minVal.value = min;
+    maxVal.value = max;
   }
 }
-
 function increaseRange(){
   max = max + 10;
   min = min -10;
 }
-
-guessButton.addEventListener("click", function(event){
-  guessedNumber = document.querySelector(".user-guess").value;
-  event.preventDefault();
-  compareNumbers();
-});
-
-clearButton.addEventListener("click", function(){
-  document.querySelector(".user-guess").value = "";
-  disableButtons();
-});
-
-resetButton.addEventListener("click", function (){
+function disableButtons() {
+  clearButton.disabled=true;
+  resetButton.disabled=true;
+}
+function resetGame() {
   correctNumber();
   document.querySelector(".user-guess").value = "";
   document.querySelector("#bottom-text").innerText = "";
   document.querySelector("#top-text").innerText = "";
   document.querySelector(".display-guess").innerText = "";
   disableButtons();
-  console.log(correctNumber());
   min = 0;
   max = 100;
-  document.querySelector(".min-value").value = min;
-  document.querySelector(".max-value").value = max;
-});
+  minVal.value = min;
+  maxVal.value = max;
+  console.log("min", min, "max", max, "rightNumber", rightNumber);
+}
 
+clearButton.addEventListener("click", function(){
+  document.querySelector(".user-guess").value = "";
+  disableButtons();
+});
+guessButton.addEventListener("click", function(event){
+  guessedNumber = document.querySelector(".user-guess").value;
+  event.preventDefault();
+  compareNumbers();
+});
 window.addEventListener("keyup", function(){
   var guessedNumber = document.querySelector(".user-guess").value;
-  if (guessedNumber == "") {
+  if (guessedNumber === "") {
     clearButton.disabled=true;
     resetButton.disabled=true;
   } else {
@@ -80,24 +81,18 @@ window.addEventListener("keyup", function(){
     resetButton.disabled=false;
   }
 });
-
-document.querySelector(".min-value").addEventListener("blur", function(){
-  var userMin = parseInt(document.querySelector(".min-value").value);
-  min = userMin;
-  correctNumber();
-  console.log(rightNumber, "right number");
-  console.log(max, "max", min, "min");
-});
-
-document.querySelector(".max-value").addEventListener("blur", function(){
-  var userMax = parseInt(document.querySelector(".max-value").value);
+maxVal.addEventListener("blur", function(){
+  var userMax = parseInt(maxVal.value);
   max = userMax;
   correctNumber();
-  console.log(rightNumber, "right number");
-  console.log(max, "max", min, "min");
+  console.log("min", min, "max", max, "rightNumber", rightNumber);
 });
-
-function disableButtons() {
-  clearButton.disabled=true;
-  resetButton.disabled=true;
-}
+minVal.addEventListener("blur", function(){
+  var userMin = parseInt(minVal.value);
+  min = userMin;
+  correctNumber();
+  console.log("min", min, "max", max, "rightNumber", rightNumber);
+});
+resetButton.addEventListener("click", function (){
+  resetGame();
+});
