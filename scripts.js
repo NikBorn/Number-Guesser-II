@@ -50,15 +50,17 @@ function addScore() {
     toggleActive();
   }
 }
+
 function checkWinner() {
-  if (scoreOne.innerText >= 10) {
-    console.log("Player One Wins!!");
+  if (scoreOne.innerText >= 20) {
+    alert("Player One Wins!!");
     resetGame();
-  } if (scoreTwo.innerText >= 10) {
-    console.log("Player Two Wins!!");
+  } if (scoreTwo.innerText >= 20) {
+    alert("Player Two Wins!!");
     resetGame();
   }
 }
+
 function compareNumbers() {
   document.querySelector(".display-guess").innerText = guessedNumber;
   var topText = document.querySelector("#top-text");
@@ -86,24 +88,28 @@ function compareNumbers() {
     maxVal.value = max;
   }
 }
+
 function correctNumber() {
   var randomNum = Math.floor(Math.random() * (max - min)) + min;
   rightNumber = parseInt(randomNum);
   return rightNumber;
 }
+
 function disableButtons() {
   clearButton.disabled=true;
   resetButton.disabled=true;
 }
+
 function increaseRange(){
   max = max + 10;
   min = min -10;
 }
+
 function resetGame() {
   document.querySelector(".user-guess").value = "";
   document.querySelector("#top-text").innerText = "";
   document.querySelector(".display-guess").innerText = "";
-  document.querySelector("#bottom-text").innerText = "whaaaat?";
+  document.querySelector("#bottom-text").innerText = "";
   correctNumber();
   disableButtons();
   console.log(correctNumber());
@@ -116,7 +122,13 @@ function resetGame() {
   maxVal.value = max;
   scoreOne.innerText = 0;
   scoreTwo.innerText = 0;
+  clearBttomTxt();
 }
+
+function clearBottomTxt() {
+    document.querySelector("#bottom-text").innerText = "";
+}
+
 function toggleActive() {
   // player1.classList.toggle('active');
   if (player1.classList.contains("active")) {
