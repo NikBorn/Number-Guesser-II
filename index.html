@@ -2,10 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Number Guesser/Math Game</title>
+    <title>Number Guesser 2 player</title>
     <link rel="normalize" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <header>
@@ -14,17 +15,17 @@
     <section class="scoreboard">
       <article id="player-one" class="board board-1 active">
         <h3 class="player-1">Player 1:</h3>
-        <h3 class="score-one">0</h3>
+        <h3 class="score-one" role="player one's current score">0</h3>
       </article>
       <article id="player-two" class="board board-2">
         <h3 class="player-two">Player 2:</h3>
-        <h3 class="score-two">0</h3>
+        <h3 class="score-two" role="Player two's current score">0</h3>
       </article>
     </section>
-    <input class="user-guess" type="number" placeholder="Enter Your Guess">
-    <article>
-      <button class="guess-btn btns">Guess</button>
-      <button class="clear-btn btns" disabled>Clear</button>
+    <input class="user-guess" type="number" placeholder="Enter Your Guess" role="player guess input">
+    <article class="top-2-btns">
+      <button class="guess-btn btns" role="button for entering player's guess">Guess</button>
+      <button class="clear-btn btns" disabled role="button to clear the input field">Clear</button>
     </article>
     <article class="topbox clearfix">
       <p id="top-text"></p>
@@ -35,12 +36,12 @@
     <article class="bottombox clearfix">
     <p id="bottom-text"></p>
     </article>
-    <button class="reset-btn btns" disabled>Reset</button>
+    <button class="reset-btn btns" disabled role="button for resetting the game">Reset</button>
     <article class="minmax-container">
       <h3 class="minmax-label">Guess Min:</h3>
-      <input type="number" class="min-value minmax" value="0">
+      <input type="number" class="min-value minmax" value="0" role="minimum value of guess range">
       <h3 class="minmax-label">Guess Max:</h3>
-      <input type="number" class="max-value minmax" value="100">
+      <input type="number" class="max-value minmax" value="100" role="maximum value of guess range">
     <article>
     <script type="text/javascript" src="scripts.js"></script>
   </body>

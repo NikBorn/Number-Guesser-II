@@ -51,11 +51,11 @@ function addScore() {
   }
 }
 function checkWinner() {
-  if (scoreOne.innerText >= 25) {
-    alert("Player One Wins!!");
+  if (scoreOne.innerText >= 10) {
+    console.log("Player One Wins!!");
     resetGame();
-  } if (scoreTwo.innerText >= 25) {
-    alert("Player Two Wins!!");
+  } if (scoreTwo.innerText >= 10) {
+    console.log("Player Two Wins!!");
     resetGame();
   }
 }
@@ -63,16 +63,15 @@ function compareNumbers() {
   document.querySelector(".display-guess").innerText = guessedNumber;
   var topText = document.querySelector("#top-text");
   topText.innerText = "Your Last Guess Was";
+  guessCount = guessCount + 1;
   if (guessedNumber > max || guessedNumber < min) {
     alert("Your Guess was Outside of Range");
   }
   if (guessedNumber > rightNumber) {
     document.querySelector("#bottom-text").innerText = "That was Too High";
-    guessCount = guessCount + 1;
   }
   if (guessedNumber < rightNumber) {
     document.querySelector("#bottom-text").innerText = "That was Too Low";
-    guessCount = guessCount + 1;
   } else if (guessedNumber == rightNumber) {
     addScore();
     increaseRange();
@@ -82,7 +81,7 @@ function compareNumbers() {
     console.log("player-1", playerOne);
     guessCount = 0;
     document.querySelector(".user-guess").value = "";
-    document.querySelector("#bottom-text").innerText = "Boom! Bitches!!";
+    document.querySelector("#bottom-text").innerText = "Boom!";
     minVal.value = min;
     maxVal.value = max;
   }
@@ -101,11 +100,11 @@ function increaseRange(){
   min = min -10;
 }
 function resetGame() {
-  correctNumber();
   document.querySelector(".user-guess").value = "";
-  document.querySelector("#bottom-text").innerText = "";
   document.querySelector("#top-text").innerText = "";
   document.querySelector(".display-guess").innerText = "";
+  document.querySelector("#bottom-text").innerText = "whaaaat?";
+  correctNumber();
   disableButtons();
   console.log(correctNumber());
   playerOne = 0;
@@ -129,6 +128,12 @@ function toggleActive() {
   }
 }
 
+document.querySelector(".user-guess").addEventListener("keyup", function() {
+    if (event.keyCode === 13) {
+        guessButton.click();
+    }
+});
+
 window.addEventListener("keyup", function(){
   var guessedNumber = document.querySelector(".user-guess").value;
   if (guessedNumber === "") {
@@ -139,6 +144,7 @@ window.addEventListener("keyup", function(){
     resetButton.disabled=false;
   }
 });
+
 guessButton.addEventListener("click", function(event){
   guessedNumber = document.querySelector(".user-guess").value;
   event.preventDefault();
@@ -152,6 +158,7 @@ clearButton.addEventListener("click", function(){
   document.querySelector(".user-guess").value = "";
   disableButtons();
 });
+
 minVal.addEventListener("blur", function(){
   var userMin = parseInt(minVal.value);
   min = userMin;
@@ -159,6 +166,7 @@ minVal.addEventListener("blur", function(){
   console.log("rightNumber", rightNumber);
   console.log("min", min, "max", max);
 });
+
 maxVal.addEventListener("blur", function(){
   var userMax = parseInt(maxVal.value);
   max = userMax;

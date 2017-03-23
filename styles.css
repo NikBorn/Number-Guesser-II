@@ -10,8 +10,8 @@ html {
 }
 
 body {
-  text-align: center;
   margin: 0px;
+  text-align: center;
 }
 
 header {
@@ -22,8 +22,8 @@ header {
 
 p {
   font-size: 30px;
-  margin: 0px;
   font-weight: 300;
+  margin: 0px;
 }
 
 h1,
@@ -36,28 +36,36 @@ h1{
   margin: 0px;
 }
 
-/*.display-guess {
-  font-size: 100px;
-}*/
-
 h2 {
   font-size: 70px;
-  margin: 0px auto;
   font-weight: 300;
+  margin: 0px auto;
   width: 400px;
 }
 
 h3 {
   display: inline-block;
-  margin: 0px;
   font-weight: 300;
+  margin: 0px;
 }
 
+input {
+  font-size: 20px;
+  height: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+  -webkit-writing-mode: none;
+  width: 370px;
+}
+
+
+
+
 .board {
-  width: 180px;
   height: 27px;
   display: inline-block;
   margin-bottom: 30px;
+  width: 180px;
 }
 
 .player-1,
@@ -65,30 +73,20 @@ h3 {
   margin-right: 5px;
 }
 
-
-input {
-  width: 370px;
-  margin-bottom: 40px;
-  height: 30px;
-  font-size: 20px;
-  text-align: center;
-  -webkit-writing-mode: none;
-}
-
 .btns {
   background-color: #D0D2D3;
   border: none;
   border-radius: 50px;
-  width: 180px;
-  height: 30px;
-  font-size: 18px;
   color: #FFFFFF;
+  font-size: 18px;
+  height: 30px;
   padding-bottom: 10px;
+  width: 180px;
 }
 
 .guesser {
-  font-weight: 300;
   color:#FFFFFF;
+  font-weight: 300;
 }
 
 .guess-btn {
@@ -96,8 +94,33 @@ input {
 }
 
 .reset-btn {
-  width: 380px;
   margin-bottom: 40px;
+  width: 380px;
+}
+
+.topbox,
+.bottombox {
+  align-content: center;
+  min-height: 60px;
+  padding-top: 10px;
+}
+
+.topbox {
+  margin-top: 40px;
+}
+
+.displaybox {
+  min-height: 100px;
+}
+
+
+.bottombox {
+  margin-bottom: 40px;
+}
+
+.minmax {
+  margin-bottom: 0px;
+  width: 70px;
 }
 
 .btns:hover {
@@ -112,31 +135,50 @@ input {
   font-weight: 300;
 }
 
-.topbox,
-.bottombox {
-  min-height: 60px;
-  align-content: center;
-  padding-top: 10px;
-}
-
-.topbox {
-  margin-top: 40px;
-}
-
-.bottombox {
-  margin-bottom: 40px;
-}
-
-.displaybox {
-  min-height: 100px;
-}
-
-.minmax {
-  width: 70px;
-  margin-bottom: 0px;
-}
-
 .active {
   background-color: #ED458B;
   color: #FFFFFF;
+}
+
+@media screen and (max-width: 480px) {
+
+  h1 {
+    font-size: 35px;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+  input {
+    margin-bottom: 20px;
+  }
+
+  .btns {
+    display: block;
+    margin: 0px auto 20px;
+    width: 90%;
+  }
+
+  .guess-btn,
+  .reset-btn, {
+    margin-bottom: 10px;
+  }
+
+  .display-guess {
+    width: 200px;
+  }
+
+  .user-guess {
+    width: 90%
+  }
+
+  .top-box {
+    margin-top: 20px;
+  }
+
+  #player-one,
+  #player-two {
+    width: 140px;
+  }
 }
